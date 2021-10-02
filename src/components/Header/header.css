@@ -1,0 +1,16 @@
+.header-container {
+  height: 97px;
+  background-color: #1ea1f7;
+  color: white;
+}
+
+.header-input-block {
+  background-color: red;
+  width: 500px;
+}
+
+.button-input-gg {
+  color: #1ea1f7;
+  font-weight: bold;
+  font-family: revert;
+}

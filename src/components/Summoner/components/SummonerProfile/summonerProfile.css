@@ -1,0 +1,77 @@
+.summoner-profile-containers {
+  border: solid #d8d8d8;
+  border-width: thin;
+}
+
+.summoner-previous-tiers-containers {
+  display: flex;
+  padding-left: 25px;
+}
+
+.summoner-previous-tiers-element {
+  border: solid #d0d3d4;
+  border-radius: 2px;
+  padding: 4px 5px 3px;
+  margin: 0 0 0 7px;
+  background-color: #eaeaea;
+  color: #657070;
+  font-family: Helvetica;
+  font-size: 11px;
+}
+
+.summoner-profile-picture-container {
+  position: relative;
+}
+
+.summoner-profile-picture {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.summoner-profile-picture-border {
+  width: 120px;
+  height: 120px;
+  left: -10px;
+  top: -12px;
+  position: absolute;
+}
+
+.summoner-profile-name {
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.77px;
+  color: #242929;
+  font-family: AppleSDGothicNeo;
+}
+
+.summoner-profile-ladder {
+  font-size: 11px;
+  color: #657070;
+  font-family: AppleSDGothicNeo;
+}
+
+.summoner-profile-description {
+  text-align: left;
+}
+
+.img_levelbox {
+  width: 44px;
+  height: 24px;
+  border-style: solid;
+  border-width: 1px;
+  border-image-source: linear-gradient(to bottom, #f6e08f, #ca9a2c 99%);
+  border-image-slice: 1;
+  background-color: #2c3548;
+  color: #f6e08f;
+  font-size: 14px;
+
+  position: absolute;
+  left: 25px;
+  top: 85px;
+}
