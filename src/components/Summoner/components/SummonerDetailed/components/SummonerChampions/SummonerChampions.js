@@ -5,6 +5,7 @@ import { getSummonerMostInfo } from "../../../../../../services/summoner";
 
 import { calculateRatio } from "../../../../../../utils/calculateRatio";
 import SummonerChampionsByWinRate from "./components/SummonerChampionsByWinRate";
+import SummonerChampionsByWeekRate from "./components/SummonerChampionsByWeekRate";
 
 export const SummonerChampions = (props) => {
   const { summoner } = props;
@@ -26,6 +27,7 @@ export const SummonerChampions = (props) => {
   useEffect(() => {
     if (summoner.name) {
       getSummonerMostInfo(summoner.name).then((result) => {
+        console.log(result);
         processChampions(result.champions, setChampions);
       });
     }
@@ -44,7 +46,7 @@ export const SummonerChampions = (props) => {
             Champion Win Ratio
           </div>
           <div
-            className={`column champion-tab-right summoner-champions-${
+            className={`column px-1 champion-tab-right summoner-champions-${
               sortByWinRate ? "tab" : "tab-selected"
             }`}
             onClick={() => setSortByWinRate(false)}
@@ -52,15 +54,26 @@ export const SummonerChampions = (props) => {
             Rank win rate per week
           </div>
         </div>
-        {champions.map((champion, index) => {
-          return (
-            <SummonerChampionsByWinRate
-              key={champion.name + index}
-              champion={champion}
-              isLastElement={index === champions.length - 1}
-            />
-          );
-        })}
+        {sortByWinRate &&
+          champions.map((champion, index) => {
+            return (
+              <SummonerChampionsByWinRate
+                key={champion.name + index}
+                champion={champion}
+                isLastElement={index === champions.length - 1}
+              />
+            );
+          })}
+        {!sortByWinRate &&
+          champions.map((champion, index) => {
+            return (
+              <SummonerChampionsByWeekRate
+                key={champion.name + index}
+                champion={champion}
+                isLastElement={index === champions.length - 1}
+              />
+            );
+          })}
       </div>
     );
   } else return <div></div>;
