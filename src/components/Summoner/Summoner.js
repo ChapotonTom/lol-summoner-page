@@ -16,12 +16,6 @@ export const Summoner = (props) => {
       });
     }
   }, [summonerName]);
-
-  useEffect(() => {
-    if (summoner) {
-      console.log(summoner);
-    }
-  }, [summoner]);
   return (
     <div>
       <SummonerProfile summoner={summoner} />
