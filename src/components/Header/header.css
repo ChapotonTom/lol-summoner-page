@@ -9,8 +9,20 @@
   width: 500px;
 }
 
+.summoner-search-input {
+  border: transparent;
+}
+
+.summoner-search-input:focus {
+  outline-width: 0;
+  outline: none;
+}
+
 .button-input-gg {
-  color: #1ea1f7;
-  font-weight: bold;
-  font-family: revert;
+  border: transparent;
+}
+
+.button-logo-opgg {
+  width: 30px;
+  border: solid transparent;
 }

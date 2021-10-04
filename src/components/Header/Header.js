@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./header.css";
 
+import OPGGLOGO from "../../assets/images/op-gg-logo.svg";
+
 export const Header = (props) => {
   const [summonerName, setSummonerName] = useState("");
 
@@ -20,26 +22,30 @@ export const Header = (props) => {
 
   return (
     <div className="section header-container">
-      <div className="level-right">
-        <div className="level-item">
-          <div className="field has-addons">
-            <p className="control">
-              <input
-                className="input"
-                type="text"
-                placeholder="Name1, Name2..."
-                onChange={(ev) => handleSummonerNameInput(ev.target.value)}
-                onKeyDown={handleKeyDown}
-              />
-            </p>
-            <p className="control">
-              <button
-                className="button button-input-gg"
-                onClick={confirmSummonerSearch}
-              >
-                .GG
-              </button>
-            </p>
+      <div className="container px-3" style={{ width: "75%" }}>
+        <div className="level-right">
+          <div className="level-item">
+            <div className="field has-addons">
+              <div className="control has-icons-right">
+                <input
+                  className="input"
+                  type="text"
+                  placeholder="Name1, Name2..."
+                  onChange={(ev) => handleSummonerNameInput(ev.target.value)}
+                  onKeyDown={handleKeyDown}
+                />
+                <div
+                  className="icon is-right"
+                  style={{ pointerEvents: "initial", cursor: "pointer" }}
+                >
+                  <img
+                    alt="opgglogo"
+                    src={OPGGLOGO}
+                    className={"button-logo-opgg"}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
