@@ -7,7 +7,11 @@ import "./summonerGamesList.css";
 import GameMoreStats from "./components/GameMoreStats";
 import GameInventory from "./components/GameInventory";
 
-import { getItemInformation } from "../../../../../../../../services/item";
+import { getSummonerMatchDetail } from "../../../../../../../../services/match";
+// import { getItemInformation } from "../../../../../../../../services/item";
+
+import { getRandomInt } from "../../../../../../../../utils/getRandomInt";
+import GameTeamPlayers from "./components/GameTeamPlayers";
 
 const getGameStyle = (isWin, needRenew) => {
   if (needRenew) return "game-rematch";
@@ -16,48 +20,63 @@ const getGameStyle = (isWin, needRenew) => {
 };
 
 export const SummonerGamesList = (props) => {
-  const { games } = props;
+  const { game, itemsDetails, summonerName } = props;
 
-  const [itemsDetails, setItemsDetails] = useState([]);
+  const [teamsInformations, setTeamsInformations] = useState();
+
+  const insertPlayerRandomly = (teams) => {
+    const randomTeam = getRandomInt(2);
+    const randomPlayer = getRandomInt(4);
+
+    teams[randomTeam].players[randomPlayer].summonerName = summonerName;
+    teams[randomTeam].players[randomPlayer].champion = game.champion;
+    setTeamsInformations(teams);
+  };
 
   useEffect(() => {
-    getItemInformation().then((result) => setItemsDetails(result.data));
-  }, []);
+    getSummonerMatchDetail(game.gameId).then((result) =>
+      insertPlayerRandomly(result.teams)
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [game.gameId]);
 
+  if (!teamsInformations) return <div />;
   return (
-    <div className="container mt-3">
-      {games.map((game) => {
-        return (
-          <div
-            key={game.gameId}
-            className={`columns mx-0 mt-0 summoner-game-details-container ${getGameStyle(
-              game.isWin,
-              game.needRenew
-            )}`}
-          >
-            <GameGeneralInfos
-              gameType={game.gameType}
-              createDate={game.createDate}
-              isWin={game.isWin}
-              needRenew={game.needRenew}
-              gameLength={game.gameLength}
-            />
-            <GameChampionAndStuff game={game} />
-            <GameKDA stats={game.stats.general} />
-            <GameMoreStats
-              stats={game.stats.general}
-              championLevel={game.champion.level}
-            />
-            <GameInventory
-              items={game.items}
-              itemsDetails={itemsDetails}
-              wards={game.stats.ward}
-              isWin={game.isWin}
-              needRenew={game.needRenew}
-            />
-          </div>
-        );
-      })}
+    <div
+      key={game.gameId}
+      className={`columns mx-0 mt-0 summoner-game-details-container ${getGameStyle(
+        game.isWin,
+        game.needRenew
+      )}`}
+    >
+      <GameGeneralInfos
+        gameType={game.gameType}
+        createDate={game.createDate}
+        isWin={game.isWin}
+        needRenew={game.needRenew}
+        gameLength={game.gameLength}
+      />
+      <GameChampionAndStuff game={game} />
+      <GameKDA stats={game.stats.general} />
+      <GameMoreStats
+        stats={game.stats.general}
+        championLevel={game.champion.level}
+      />
+      <GameInventory
+        items={game.items}
+        itemsDetails={itemsDetails}
+        wards={game.stats.ward}
+        isWin={game.isWin}
+        needRenew={game.needRenew}
+      />
+      <GameTeamPlayers
+        team={teamsInformations[0]}
+        summonerName={summonerName}
+      />
+      <GameTeamPlayers
+        team={teamsInformations[1]}
+        summonerName={summonerName}
+      />
     </div>
   );
 };

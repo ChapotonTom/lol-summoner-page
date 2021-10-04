@@ -58,6 +58,7 @@ const displayItems = (
           return (
             <div
               className="game-inventory-item-picture"
+              key={"empty" + index}
               style={{ backgroundColor: emptyItemBackground, cursor: "auto" }}
             ></div>
           );

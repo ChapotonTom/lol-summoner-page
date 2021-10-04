@@ -189,3 +189,34 @@
   font-weight: bold;
   margin-left: 5px;
 }
+
+/* TEAMS */
+
+.game-team-player-container {
+  display: flex;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.game-team-player-container {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.game-team-player-champion-picture {
+  width: 16px;
+  height: 16px;
+  margin-bottom: 1px;
+  margin-right: 5px;
+}
+.game-team-player-name {
+  font-family: Helvetica;
+  font-size: 11px;
+  letter-spacing: -0.42px;
+  color: #555;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  overflow: hidden;
+}

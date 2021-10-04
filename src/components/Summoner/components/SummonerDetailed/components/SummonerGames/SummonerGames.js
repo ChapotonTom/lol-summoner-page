@@ -4,6 +4,8 @@ import { getSummonerMatches } from "../../../../../../services/match";
 import SummonerGamesList from "./components/SummonerGamesList/SummonerGamesList";
 import SummonerGamesSummary from "./components/SummonerGamesSummary";
 
+import { getItemInformation } from "../../../../../../services/item";
+
 export const SummonerGames = (props) => {
   const { summoner } = props;
 
@@ -17,10 +19,27 @@ export const SummonerGames = (props) => {
     }
   }, [summoner.name]);
 
+  const [itemsDetails, setItemsDetails] = useState([]);
+
+  useEffect(() => {
+    getItemInformation().then((result) => setItemsDetails(result.data));
+  }, []);
+
   return (
     <div>
       <SummonerGamesSummary />
-      <SummonerGamesList games={games} />
+      <div className="container mt-3">
+        {games.map((game) => {
+          return (
+            <SummonerGamesList
+              key={game.gameId}
+              game={game}
+              itemsDetails={itemsDetails}
+              summonerName={summoner.name}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };
