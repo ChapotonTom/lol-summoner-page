@@ -56,7 +56,7 @@ export const SummonerProfile = (props) => {
               <div className="summoner-profile-ladder">
                 Ladder Rank
                 <span style={{ fontWeight: "bold" }}>
-                  {` ${summoner.ladderRank.rank} `}
+                  {` ${summoner.ladderRank.rank.toLocaleString()} `}
                 </span>
                 ( {summoner.ladderRank.rankPercentOfTop}% of top )
               </div>
