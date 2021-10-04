@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import GameChampionAndStuff from "./components/GameChampionAndStuff";
 import GameGeneralInfos from "./components/GameGeneralInfos";
 import GameKDA from "./components/GameKDA";
@@ -6,6 +6,8 @@ import "./summonerGamesList.css";
 
 import GameMoreStats from "./components/GameMoreStats";
 import GameInventory from "./components/GameInventory";
+
+import { getItemInformation } from "../../../../../../../../services/item";
 
 const getGameStyle = (isWin, needRenew) => {
   if (needRenew) return "game-rematch";
@@ -15,6 +17,13 @@ const getGameStyle = (isWin, needRenew) => {
 
 export const SummonerGamesList = (props) => {
   const { games } = props;
+
+  const [itemsDetails, setItemsDetails] = useState([]);
+
+  useEffect(() => {
+    getItemInformation().then((result) => setItemsDetails(result.data));
+  }, []);
+
   return (
     <div className="container mt-3">
       {games.map((game) => {
@@ -41,6 +50,7 @@ export const SummonerGamesList = (props) => {
             />
             <GameInventory
               items={game.items}
+              itemsDetails={itemsDetails}
               wards={game.stats.ward}
               isWin={game.isWin}
               needRenew={game.needRenew}
