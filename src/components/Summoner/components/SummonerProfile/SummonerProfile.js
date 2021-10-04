@@ -1,6 +1,8 @@
 import React from "react";
 import "./summonerProfile.css";
 
+import levelBox from "../../../../assets/images/bg-levelbox.png";
+
 export const SummonerProfile = (props) => {
   const { summoner } = props;
 
@@ -39,7 +41,14 @@ export const SummonerProfile = (props) => {
                   alt="profilePictureBorder"
                   className="summoner-profile-picture-border"
                 />
-                <div className="img_levelbox">{summoner.level}</div>
+                <div>
+                  <img
+                    alt="summoner-league-pic"
+                    className="img_levelbox"
+                    src={levelBox}
+                  />
+                  <div className="summoner-profile-level">{summoner.level}</div>
+                </div>
               </div>
             </div>
             <div className="column pl-0 summoner-profile-description">
