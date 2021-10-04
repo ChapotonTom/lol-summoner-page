@@ -27,7 +27,7 @@ export const SummonerChampionsByWinRate = (props) => {
         isLastElement ? "last-champion-row" : ""
       }`}
     >
-      <div className="column py-0 is-one-fifth">
+      <div className="column py-0 is-one-quarter">
         <img
           alt={champion.name}
           src={champion.imageUrl}
@@ -41,7 +41,7 @@ export const SummonerChampionsByWinRate = (props) => {
         </div>
         <div></div>
       </div>
-      <div className="column pl-0 pr-1 is-one-third">
+      <div className="column pl-0 ml-2 pr-1 is-3">
         <div
           className={`summoner-champions-top-detail ${getKDAStyle(
             championKDA

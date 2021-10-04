@@ -37,6 +37,7 @@ export const Header = (props) => {
                 <div
                   className="icon is-right"
                   style={{ pointerEvents: "initial", cursor: "pointer" }}
+                  onClick={() => confirmSummonerSearch()}
                 >
                   <img
                     alt="opgglogo"

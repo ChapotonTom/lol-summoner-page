@@ -17,7 +17,7 @@ export const SummonerChampionsByWeekRate = (props) => {
         isLastElement ? "last-champion-row" : ""
       }`}
     >
-      <div className="column py-0 is-one-fifth">
+      <div className="column py-0 is-one-quarter" style={{ width: "30%" }}>
         <img
           alt={champion.name}
           src={champion.imageUrl}

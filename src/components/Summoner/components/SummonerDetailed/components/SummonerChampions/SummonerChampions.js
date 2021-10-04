@@ -26,8 +26,8 @@ export const SummonerChampions = (props) => {
 
   useEffect(() => {
     if (summoner.name) {
+      setSortByWinRate(true);
       getSummonerMostInfo(summoner.name).then((result) => {
-        console.log(result);
         processChampions(result.champions, setChampions);
       });
     }

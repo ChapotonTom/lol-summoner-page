@@ -1,0 +1,159 @@
+.summoner-game-details-container {
+  min-height: 100px;
+  border-width: thin;
+  border-radius: 2px;
+}
+
+.game-victory {
+  border: solid #a1b8cd;
+  background-color: #b0ceea;
+}
+
+.game-defeat {
+  border: solid #c0aba8;
+  background-color: #d6b5b2;
+}
+
+.game-rematch {
+  border: solid #a1b8cd;
+  background-color: #a7a7a7;
+}
+
+/* GENERAL INFORMATIONS */
+
+.game-general-infos-gameType {
+  font-family: AppleSDGothicNeo;
+  font-size: 11px;
+  font-weight: bold;
+  color: #555;
+  padding-top: 3px;
+}
+
+.game-general-infos-gameCreation,
+.game-general-infos-gameLength {
+  font-family: AppleSDGothicNeo;
+  font-size: 11px;
+  color: #555;
+  padding-top: 3px;
+}
+
+.game-general-infos-separator {
+  border-bottom: thin solid black;
+  width: 27px;
+  margin: auto;
+  border-width: thin;
+}
+
+.game-general-infos-gameResult {
+  font-family: AppleSDGothicNeo;
+  font-size: 11px;
+  color: #555;
+  font-weight: bold;
+  padding-top: 3px;
+}
+
+/* CHAMPION AND STUFF */
+
+.game-stuff-icon-container {
+  width: 35px;
+}
+
+.game-champion-picture {
+  width: 46px;
+  border-radius: 50%;
+}
+
+.game-spell-peak-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 2px;
+  margin-bottom: -5px;
+}
+
+/* KDA */
+
+.game-stuff-icon-container {
+  width: 35px;
+}
+
+.game-champion-picture {
+  width: 46px;
+  border-radius: 50%;
+}
+
+.game-spell-peak-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 2px;
+  margin-bottom: -5px;
+}
+
+.game-kills-assists-deaths {
+  font-family: Helvetica;
+  font-size: 15px;
+  font-weight: bold;
+  color: #555e5e;
+  letter-spacing: -0.58px;
+}
+
+.game-kda-str {
+  font-family: Helvetica;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: -0.42px;
+  color: #333;
+}
+
+.game-killing-badge {
+  display: flex;
+}
+
+.game-multi-killings {
+  width: 60px;
+  height: 18px;
+  margin-right: 5px;
+  padding: 1px 5px;
+  border-radius: 9px;
+  border: solid 1px #bf3b36;
+  background-color: #ec4f48;
+
+  font-family: Helvetica;
+  font-size: 10px;
+  color: #fff;
+}
+
+.game-score-badge {
+  width: 31px;
+  height: 18px;
+  margin-left: 5px;
+  padding: 1px 5px;
+  border-radius: 9px;
+  border: solid 1px #7f3590;
+  background-color: #8c51c5;
+
+  font-family: Helvetica;
+  font-size: 10px;
+  color: #fff;
+}
+
+/* MORE STATS */
+
+.game-stats-level {
+  font-family: Helvetica;
+  font-size: 11px;
+  font-weight: bold;
+  color: #555e5e;
+}
+
+.game-stats-cs {
+  font-family: AppleSDGothicNeo;
+  font-size: 11px;
+  color: #555e5e;
+}
+
+.game-stats-kills-contribution {
+  font-family: Helvetica;
+  font-size: 11px;
+  color: #d0021b;
+  font-weight: bold;
+}

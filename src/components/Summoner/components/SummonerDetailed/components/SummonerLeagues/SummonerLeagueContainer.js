@@ -7,7 +7,7 @@ import unrankedPicture from "../../../../../../assets/images/unranked.png";
 
 export const SummonerLeagueUnrankedContainer = (league) => {
   return (
-    <div className="container columns py-3 mb-5 summoner-league-container">
+    <div className="container columns pt-2 mb-5 summoner-league-container">
       <div className="column p-0 is-one-third">
         <img
           alt="summoner-league-pic"
@@ -36,7 +36,7 @@ export const SummonerLeagueContainer = (props) => {
   }
 
   return (
-    <div className="container columns py-3 mb-5 summoner-league-container">
+    <div className="container columns pt-2 mb-5 summoner-league-container">
       <div className="column p-0 is-one-third">
         <img
           alt="summoner-league-pic"
