@@ -220,3 +220,8 @@
   display: block;
   overflow: hidden;
 }
+
+.summoner-game-last-column {
+  height: 100%;
+  width: 100%;
+}

@@ -8,7 +8,6 @@ import GameMoreStats from "./components/GameMoreStats";
 import GameInventory from "./components/GameInventory";
 
 import { getSummonerMatchDetail } from "../../../../../../../../services/match";
-// import { getItemInformation } from "../../../../../../../../services/item";
 
 import { getRandomInt } from "../../../../../../../../utils/getRandomInt";
 import GameTeamPlayers from "./components/GameTeamPlayers";
@@ -17,6 +16,19 @@ const getGameStyle = (isWin, needRenew) => {
   if (needRenew) return "game-rematch";
   else if (isWin) return "game-victory";
   else return "game-defeat";
+};
+
+const getLastColumnStyle = (isWin, needRenew) => {
+  let backgroundColor = "#e89c95";
+  let border = "solid #c8817c";
+  if (needRenew) {
+    backgroundColor = "#a7a7a7";
+    border = "solid #999999";
+  } else if (isWin) {
+    backgroundColor = "#7fb0e1";
+    border = "solid #549dc7";
+  }
+  return { backgroundColor, border };
 };
 
 export const SummonerGamesList = (props) => {
@@ -77,6 +89,15 @@ export const SummonerGamesList = (props) => {
         team={teamsInformations[1]}
         summonerName={summonerName}
       />
+      <div
+        className={"columns m-0 summoner-game-last-column"}
+        style={{
+          width: "100%",
+          height: "auto",
+          minHeight: "40px",
+          ...getLastColumnStyle(game.isWin, game.needRenew),
+        }}
+      ></div>
     </div>
   );
 };

@@ -8,7 +8,7 @@ export const GameTeamPlayers = (props) => {
   return (
     <div
       className="column px-1 py-1 is-2 game-team-container"
-      style={{ width: "12%" }}
+      style={{ width: "14%" }}
     >
       <ReactTooltip />
       {team.players.map((player, index) => {
