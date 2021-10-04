@@ -5,6 +5,7 @@ import GameKDA from "./components/GameKDA";
 import "./summonerGamesList.css";
 
 import GameMoreStats from "./components/GameMoreStats";
+import GameInventory from "./components/GameInventory";
 
 const getGameStyle = (isWin, needRenew) => {
   if (needRenew) return "game-rematch";
@@ -38,14 +39,12 @@ export const SummonerGamesList = (props) => {
               stats={game.stats.general}
               championLevel={game.champion.level}
             />
-            {/* <GameGeneralInfos
-              gameType={game.gameType}
-              createDate={game.createDate}
+            <GameInventory
+              items={game.items}
+              wards={game.stats.ward}
               isWin={game.isWin}
               needRenew={game.needRenew}
-              gameLength={game.gameLength}
-            /> */}
-            {/* <div className="column is-three-quarters">INFOS</div> */}
+            />
           </div>
         );
       })}
