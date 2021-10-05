@@ -1,7 +1,7 @@
 .summoner-matches-summary-tab {
   border: solid #cdd2d2;
   border-width: thin;
-  min-height: 50px;
+  min-height: 30px;
   background-color: white;
   border-radius: 2px 2px 0px 0px;
 }
@@ -15,6 +15,7 @@
   cursor: pointer;
   color: #555555;
   font-family: AppleSDGothicNeo;
+  font-size: 12px;
 }
 
 .summoner-matches-summary-tab-text:hover {
@@ -30,6 +31,7 @@
   cursor: pointer;
   font-family: AppleSDGothicNeo;
   font-weight: bold;
+  font-size: 12px;
   color: #1f8ecd;
   border-bottom: solid #1f8ecd;
 }
@@ -49,8 +51,8 @@
 
 .game-summary-kda-graph-text {
   position: absolute;
-  top: 62px;
-  left: 66px;
+  top: 50%;
+  left: 21%;
   font-family: Helvetica;
   font-size: 14px;
   font-weight: bold;
@@ -69,4 +71,55 @@
   font-size: 16px;
   text-align: center;
   font-weight: bold;
+}
+
+.games-summary-prefered-position {
+  font-family: AppleSDGothicNeo;
+  font-size: 12px;
+  color: #666;
+}
+
+.games-summary-champion-container,
+.games-summary-position-container {
+  display: flex;
+  text-align: left;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.games-summary-position-container {
+  margin-top: 10px;
+}
+
+.games-summary-champion-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+.games-summary-champion-name,
+.games-summary-position-name {
+  font-family: Helvetica;
+  font-size: 14px;
+  color: #333333;
+}
+
+.games-summary-champion-name-not-found {
+  font-family: Helvetica;
+  font-size: 12px;
+  color: #999999;
+  margin-top: 7px;
+}
+
+.games-summary-champion-stats,
+.games-summary-position-stats {
+  font-family: Helvetica;
+  font-size: 11px;
+  color: #555;
+}
+
+.games-summary-position-icon {
+  width: 28px;
+  height: 28px;
+  margin-top: 3px;
 }
