@@ -1,8 +1,12 @@
 import React from "react";
 import "../summonerGamesList.css";
 
+import { getFileName } from "../../../../../../../../../utils/getFileName";
+
 export const GameChampionAndStuff = (props) => {
   const { game } = props;
+
+  const championName = getFileName(game.champion.imageUrl);
 
   return (
     <div
@@ -43,7 +47,7 @@ export const GameChampionAndStuff = (props) => {
           />
         </div>
       </div>
-      <div className="container">Leona</div>
+      <div className="container game-champion-name">{championName}</div>
     </div>
   );
 };

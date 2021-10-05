@@ -9,6 +9,8 @@ import iconWardVictory from "../../../../../../../../../assets/images/icon-ward-
 
 import iconWardDefeat from "../../../../../../../../../assets/images/icon-ward-red@2x.png";
 
+import { getFileName } from "../../../../../../../../../utils/getFileName";
+
 const insertEmptyItems = (items) => {
   const emptyItem = { imageUrl: false };
   const formattedItems = items;
@@ -23,12 +25,6 @@ const getEmptyItemBackground = (isWin, needRenew) => {
   if (needRenew) return "#979797";
   else if (isWin) return "#7aa5c3";
   else return "#cb9e9a";
-};
-
-const getItemId = (itemImageUrl) => {
-  const imageNameIndex = itemImageUrl.lastIndexOf("/");
-  const itemId = itemImageUrl.substring(imageNameIndex + 1).replace(".png", "");
-  return itemId;
 };
 
 const displayItems = (
@@ -49,7 +45,7 @@ const displayItems = (
             <img
               key={item.imageUrl + index}
               alt="item"
-              data-tip={itemsDetails[getItemId(item.imageUrl)].plaintext}
+              data-tip={itemsDetails[getFileName(item.imageUrl)].plaintext}
               src={item.imageUrl}
               className="game-inventory-item-picture"
             />

@@ -70,6 +70,12 @@
   margin-bottom: -5px;
 }
 
+.game-champion-name {
+  font-family: AppleSDGothicNeo;
+  font-size: 13px;
+  color: #555;
+}
+
 /* KDA */
 
 .game-stuff-icon-container {
