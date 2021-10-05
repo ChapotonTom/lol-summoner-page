@@ -13,12 +13,19 @@ export const SummonerGames = (props) => {
   const [gameTypeSelected, setGameTypeSelected] = useState("total");
   const [allGames, setAllGames] = useState([]);
   const [games, setGames] = useState([]);
+  const [gamesSummary, setGamesSummary] = useState({});
+  const [gamesChampions, setGamesChampions] = useState([]);
+  const [gamesPositions, setGamesPositions] = useState([]);
 
   useEffect(() => {
     if (summoner.name) {
       getSummonerMatches(summoner.name).then((result) => {
+        console.log(result);
         setGames(result.games);
         setAllGames(result.games);
+        setGamesSummary(result.summary);
+        setGamesChampions(result.champions);
+        setGamesPositions(result.positions);
       });
     }
   }, [summoner.name]);
@@ -46,6 +53,9 @@ export const SummonerGames = (props) => {
       <SummonerGamesSummary
         gameTypeSelected={gameTypeSelected}
         setGameTypeSelected={setGameTypeSelected}
+        gamesSummary={gamesSummary}
+        gamesChampions={gamesChampions}
+        gamesPositions={gamesPositions}
       />
       <div className="container mt-3">
         {games.map((game) => {

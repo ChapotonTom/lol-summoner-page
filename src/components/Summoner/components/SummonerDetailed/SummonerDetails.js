@@ -11,11 +11,14 @@ export const SummonerDetails = (props) => {
       <div className="section pt-3">
         <div className="container p-3" style={{ width: "75%" }}>
           <div className="columns">
-            <div className="column is-one-quarter" style={{ width: 300 }}>
+            <div
+              className="column mr-3 mb-3 is-one-quarter"
+              style={{ width: 300 }}
+            >
               <SummonerLeagues summoner={summoner} />
               <SummonerChampions summoner={summoner} />
             </div>
-            <div className="column">
+            <div className="column pl-0">
               <SummonerGames summoner={summoner} />
             </div>
           </div>

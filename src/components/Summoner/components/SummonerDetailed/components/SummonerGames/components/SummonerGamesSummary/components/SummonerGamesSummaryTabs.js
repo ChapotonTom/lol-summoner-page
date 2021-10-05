@@ -15,7 +15,7 @@ export const SummonerGamesSummaryTabs = (props) => {
           Total
         </div>
       </div>
-      <div className="column p-0 is-2" style={{ width: "13%" }}>
+      <div className="column p-0 is-2">
         <div
           className={`summoner-matches-summary-tab-text${
             gameTypeSelected === "solo" ? "-selected" : ""
@@ -25,7 +25,7 @@ export const SummonerGamesSummaryTabs = (props) => {
           Ranked Solo
         </div>
       </div>
-      <div className="column p-0 is-2" style={{ width: "13%" }}>
+      <div className="column p-0 is-2">
         <div
           className={`summoner-matches-summary-tab-text${
             gameTypeSelected === "flex" ? "-selected" : ""
