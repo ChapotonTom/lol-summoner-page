@@ -56,7 +56,7 @@ export const SummonerGames = (props) => {
         gamesChampions={gamesChampions}
         gamesPositions={gamesPositions}
       />
-      <div className="container mt-3">
+      <div className="container mt-3" style={{ minWidth: 300 }}>
         {games.map((game) => {
           return (
             <SummonerGamesList

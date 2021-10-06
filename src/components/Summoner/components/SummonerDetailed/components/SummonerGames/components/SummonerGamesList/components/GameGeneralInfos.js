@@ -23,7 +23,10 @@ const getSeparatorColor = (isWin, needRenew) => {
 
 const getGameDateStr = (howManyDaysAgo, gameDate) => {
   if (howManyDaysAgo > 0) return `${howManyDaysAgo} days ago`;
-  return `Today ${gameDate.format("HH:mm")}`;
+  const howManyHoursAgo = moment().diff(gameDate, "hours");
+  if (howManyHoursAgo > 0) return `${howManyHoursAgo}h days ago`;
+  const howManyMinutesAgo = moment().diff(gameDate, "minutes");
+  return `${howManyMinutesAgo}m ago`;
 };
 
 export const GameGeneralInfos = (props) => {

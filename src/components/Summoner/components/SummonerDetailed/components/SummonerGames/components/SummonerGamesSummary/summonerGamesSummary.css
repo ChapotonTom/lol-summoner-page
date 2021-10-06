@@ -1,8 +1,8 @@
 .summoner-matches-summary-tab {
   border: solid #cdd2d2;
   border-width: thin;
-  min-height: 30px;
-  background-color: white;
+  min-height: 36px;
+  background-color: #f2f2f2;
   border-radius: 2px 2px 0px 0px;
 }
 
@@ -52,7 +52,7 @@
 .game-summary-kda-graph-text {
   position: absolute;
   top: 50%;
-  left: 21%;
+  left: 20%;
   font-family: Helvetica;
   font-size: 14px;
   font-weight: bold;

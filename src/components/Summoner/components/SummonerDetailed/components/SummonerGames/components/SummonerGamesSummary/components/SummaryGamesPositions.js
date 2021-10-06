@@ -28,36 +28,38 @@ export const SummonerGamesPositions = (props) => {
       </div>
       {gamesPositions.map((position, index) => {
         return (
-          <div
-            key={position.position + index}
-            className="games-summary-position-container"
-          >
-            <img
-              alt="position-icon"
-              src={positionIconKeywords[position.position]}
-              className={"games-summary-position-icon"}
-            />
-            <div style={{ marginLeft: 10 }}>
-              <div className={"games-summary-position-name"}>
-                {position.positionName}
-              </div>
-              <div className={"games-summary-position-stats"}>
-                <span
-                  style={{
-                    fontWeight: "bold",
-                    color: "#1f8ecd",
-                  }}
-                >
-                  {index === 0
-                    ? randomHighPercentage
-                    : secondRandomBestPercentage}
-                  %
-                </span>
-                <span style={{ color: "#cdd2d2" }}>{" | "}</span>
-                Win Rate
-                <span style={{ fontWeight: "bold" }}>
-                  {` ${calculateRatio(position.wins, position.games)}%`}
-                </span>
+          <div key={index} style={{ display: "inline-block" }}>
+            <div
+              key={position.position + index}
+              className="games-summary-position-container"
+            >
+              <img
+                alt="position-icon"
+                src={positionIconKeywords[position.position]}
+                className={"games-summary-position-icon"}
+              />
+              <div style={{ marginLeft: 10 }}>
+                <div className={"games-summary-position-name"}>
+                  {position.positionName}
+                </div>
+                <div className={"games-summary-position-stats"}>
+                  <span
+                    style={{
+                      fontWeight: "bold",
+                      color: "#1f8ecd",
+                    }}
+                  >
+                    {index === 0
+                      ? randomHighPercentage
+                      : secondRandomBestPercentage}
+                    %
+                  </span>
+                  <span style={{ color: "#cdd2d2" }}>{" | "}</span>
+                  Win Rate
+                  <span style={{ fontWeight: "bold" }}>
+                    {` ${calculateRatio(position.wins, position.games)}%`}
+                  </span>
+                </div>
               </div>
             </div>
           </div>

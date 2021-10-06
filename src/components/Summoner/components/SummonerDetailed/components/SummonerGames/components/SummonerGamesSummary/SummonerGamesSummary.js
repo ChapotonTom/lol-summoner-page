@@ -14,7 +14,7 @@ export const SummonerGamesSummary = (props) => {
     gamesPositions,
   } = props;
   return (
-    <div className="container pt-0">
+    <div className="container pt-0" style={{ minWidth: 300 }}>
       <SummonerGamesSummaryTabs
         gameTypeSelected={gameTypeSelected}
         setGameTypeSelected={setGameTypeSelected}

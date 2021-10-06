@@ -24,11 +24,13 @@ export const Header = (props) => {
 
   const confirmSummonerSearch = (name) => {
     props.setSummonerName(name);
+    setSummonerName("");
     setSearchInputFocused(false);
   };
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
+      setSummonerName("");
       confirmSummonerSearch(summonerName);
     }
   };
@@ -44,6 +46,7 @@ export const Header = (props) => {
                   className="input"
                   onFocus={() => setSearchInputFocused(true)}
                   type="text"
+                  value={summonerName}
                   placeholder="Name1, Name2..."
                   onChange={(ev) => handleSummonerNameInput(ev.target.value)}
                   onKeyDown={handleKeyDown}
@@ -61,7 +64,7 @@ export const Header = (props) => {
                 </div>
               </div>
             </div>
-            {searchInputFocused && (
+            {searchInputFocused && summonerName === "" && (
               <SummonersNameSearchBox
                 confirmSummonerSearch={confirmSummonerSearch}
               />

@@ -5,6 +5,15 @@
   border: solid 1px #cdd2d2;
 }
 
+.summoner-league-text-container {
+  text-align: left;
+}
+@media screen and (max-width: 768px) {
+  .summoner-league-text-container {
+    text-align: center;
+  }
+}
+
 .summoner-league-name {
   font-size: 11px;
   color: #879292;

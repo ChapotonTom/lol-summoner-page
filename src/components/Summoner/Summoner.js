@@ -19,6 +19,9 @@ const insertSummonerInHistory = (summoner) => {
       isFavorite: false,
     };
     summonersHistory.unshift(insertChampion);
+    if (summonersHistory.length > 8) {
+      summonersHistory.splice(8, 1);
+    }
     localStorage.setItem("summonersHistory", JSON.stringify(summonersHistory));
   }
 };

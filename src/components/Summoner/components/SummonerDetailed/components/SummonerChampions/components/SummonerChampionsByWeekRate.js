@@ -1,6 +1,8 @@
 import React from "react";
 import "../summonerChampions.css";
 
+import ReactTooltip from "react-tooltip";
+
 import { calculateRatio } from "../../../../../../../utils/calculateRatio";
 
 export const SummonerChampionsByWeekRate = (props) => {
@@ -17,20 +19,22 @@ export const SummonerChampionsByWeekRate = (props) => {
         isLastElement ? "last-champion-row" : ""
       }`}
     >
-      <div className="column py-0 is-one-quarter" style={{ width: "30%" }}>
+      <ReactTooltip />
+
+      <div className="column py-0 is-one-quarter">
         <img
           alt={champion.name}
           src={champion.imageUrl}
           className="summoner-champions-image"
+          data-tip={champion.name}
         />
       </div>
       <div className="column pt-4 pl-0 pr-1 is-one-fifth">
-        <div className="summoner-champions-top-detail">{champion.name}</div>
+        <div className="summoner-champions-top-detail" data-tip={champion.name}>
+          {champion.name}
+        </div>
       </div>
-      <div
-        className="column pt-4 pl-0 pr-0 is-one-fifth"
-        style={{ width: "40px" }}
-      >
+      <div className="column pt-4 pl-0 pr-0 is-one-fifth">
         <div
           className="summoner-champions-top-detail"
           style={{ color: "#879292" }}

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import GameChampionAndStuff from "./components/GameChampionAndStuff";
 import GameGeneralInfos from "./components/GameGeneralInfos";
@@ -49,7 +50,6 @@ export const SummonerGamesList = (props) => {
     getSummonerMatchDetail(game.gameId).then((result) =>
       insertPlayerRandomly(result.teams)
     );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [game.gameId]);
 
   if (!teamsInformations) return <div />;
@@ -81,18 +81,19 @@ export const SummonerGamesList = (props) => {
         isWin={game.isWin}
         needRenew={game.needRenew}
       />
-      <GameTeamPlayers
-        team={teamsInformations[0]}
-        summonerName={summonerName}
-      />
-      <GameTeamPlayers
-        team={teamsInformations[1]}
-        summonerName={summonerName}
-      />
+      <div className={"column summoner-game-team-container p-1 is-3"}>
+        <GameTeamPlayers
+          team={teamsInformations[0]}
+          summonerName={summonerName}
+        />
+        <GameTeamPlayers
+          team={teamsInformations[1]}
+          summonerName={summonerName}
+        />
+      </div>
       <div
-        className={"columns m-0 summoner-game-last-column"}
         style={{
-          width: "100%",
+          width: "40px",
           height: "auto",
           minHeight: "40px",
           ...getLastColumnStyle(game.isWin, game.needRenew),

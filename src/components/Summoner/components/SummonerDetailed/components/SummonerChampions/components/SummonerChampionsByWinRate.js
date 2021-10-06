@@ -1,6 +1,8 @@
 import React from "react";
 import "../summonerChampions.css";
 
+import ReactTooltip from "react-tooltip";
+
 const getChampionKDA = (kills, assists, deaths) => {
   return ((kills + assists) / deaths).toFixed(2);
 };
@@ -27,15 +29,19 @@ export const SummonerChampionsByWinRate = (props) => {
         isLastElement ? "last-champion-row" : ""
       }`}
     >
+      <ReactTooltip />
       <div className="column py-0 is-one-quarter">
         <img
           alt={champion.name}
           src={champion.imageUrl}
           className="summoner-champions-image"
+          data-tip={champion.name}
         />
       </div>
-      <div className="column pl-0 pr-1 is-one-quarter">
-        <div className="summoner-champions-top-detail">{champion.name}</div>
+      <div className="column pl-0 pr-1 is-one-quarter summoner-champions-rate-container">
+        <div className="summoner-champions-top-detail" data-tip={champion.name}>
+          {champion.name}
+        </div>
         <div className="summoner-champions-bottom-detail">
           CS {champion.cs} (2.4)
         </div>

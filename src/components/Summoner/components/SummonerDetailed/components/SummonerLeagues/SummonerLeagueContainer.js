@@ -44,7 +44,7 @@ export const SummonerLeagueContainer = (props) => {
           style={{ width: 104 }}
         />
       </div>
-      <div className="column py-0 px-1" style={{ textAlign: "left" }}>
+      <div className="column py-0 px-1 summoner-league-text-container">
         <div className="summoner-league-name">{league.tierRank.name}</div>
         <div className="summoner-league-top">
           <span style={{ fontWeight: "bold" }}>top</span> (total {totalGames}{" "}

@@ -197,16 +197,14 @@
 }
 
 /* TEAMS */
+.summoner-game-team-container {
+  display: flex;
+}
 
 .game-team-player-container {
   display: flex;
   overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.game-team-player-container {
-  overflow: hidden;
-  text-overflow: ellipsis;
+  /* text-overflow: ellipsis; */
 }
 
 .game-team-player-champion-picture {
@@ -230,4 +228,13 @@
 .summoner-game-last-column {
   height: 100%;
   width: 100%;
+}
+
+.summoner-game-last-column {
+  width: 30px;
+}
+@media screen and (max-width: 768px) {
+  .summoner-game-last-column {
+    width: 100%;
+  }
 }
