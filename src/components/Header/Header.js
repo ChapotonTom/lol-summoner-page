@@ -22,13 +22,14 @@ export const Header = (props) => {
     setSummonerName(name);
   };
 
-  const confirmSummonerSearch = () => {
-    props.setSummonerName(summonerName);
+  const confirmSummonerSearch = (name) => {
+    props.setSummonerName(name);
+    setSearchInputFocused(false);
   };
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      confirmSummonerSearch();
+      confirmSummonerSearch(summonerName);
     }
   };
 
@@ -50,7 +51,7 @@ export const Header = (props) => {
                 <div
                   className="icon is-right"
                   style={{ pointerEvents: "initial", cursor: "pointer" }}
-                  onClick={() => confirmSummonerSearch()}
+                  onClick={() => confirmSummonerSearch(summonerName)}
                 >
                   <img
                     alt="opgglogo"
@@ -62,8 +63,7 @@ export const Header = (props) => {
             </div>
             {searchInputFocused && (
               <SummonersNameSearchBox
-                searchInputFocused={searchInputFocused}
-                setSearchInputFocused={setSearchInputFocused}
+                confirmSummonerSearch={confirmSummonerSearch}
               />
             )}
           </div>

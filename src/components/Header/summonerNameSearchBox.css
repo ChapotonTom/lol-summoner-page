@@ -37,3 +37,7 @@
   margin-right: 10px;
   cursor: pointer;
 }
+
+.history-not-found-text {
+  font-size: 12px;
+}
