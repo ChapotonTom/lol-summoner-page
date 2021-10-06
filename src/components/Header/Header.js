@@ -3,6 +3,7 @@ import "./header.css";
 
 import OPGGLOGO from "../../assets/images/op-gg-logo.svg";
 import SummonersNameSearchBox from "./SummonersNameSearchBox";
+import SummonerNameInputBox from "./SummonerNameInputBox";
 
 export const Header = (props) => {
   const [summonerName, setSummonerName] = useState("");
@@ -66,6 +67,12 @@ export const Header = (props) => {
             </div>
             {searchInputFocused && summonerName === "" && (
               <SummonersNameSearchBox
+                confirmSummonerSearch={confirmSummonerSearch}
+              />
+            )}
+            {searchInputFocused && summonerName !== "" && (
+              <SummonerNameInputBox
+                summonerName={summonerName}
                 confirmSummonerSearch={confirmSummonerSearch}
               />
             )}

@@ -1,4 +1,5 @@
-.summoner-searchbox-container {
+.summoner-searchbox-container,
+.summoner-inputbox-container {
   position: absolute;
   width: 260px;
   top: 45px;
@@ -40,4 +41,27 @@
 
 .history-not-found-text {
   font-size: 12px;
+}
+
+.summoner-search-input-element-container {
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.summoner-search-input-element-container:hover {
+  background-color: #e8f5fe;
+}
+
+.summoner-search-input-element-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.summoner-search-input-summoner {
+  text-align: left;
+}
+
+.summoner-search-input-summoner-name {
+  font-size: 14px;
 }

@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
-import "./summonerNameSearchBox.css";
+import "./summonerNameSearchInputBox.css";
 
 import favoriteIconOn from "../../assets/images/icon-favorite-on.png";
 import favoriteIconOff from "../../assets/images/icon-favorite-off.png";

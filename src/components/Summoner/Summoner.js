@@ -11,19 +11,20 @@ const insertSummonerInHistory = (summoner) => {
   const isExisting = summonersHistory.findIndex(
     (summonerHistory) => summonerHistory.name === summoner.name
   );
-  if (isExisting < 0) {
-    const insertChampion = {
-      name: summoner.name,
-      imageUrl: summoner.profileImageUrl,
-      previousTier: `${summoner.previousTiers[0].tier} - ${summoner.previousTiers[0].lp}LP`,
-      isFavorite: false,
-    };
-    summonersHistory.unshift(insertChampion);
-    if (summonersHistory.length > 8) {
-      summonersHistory.splice(8, 1);
-    }
-    localStorage.setItem("summonersHistory", JSON.stringify(summonersHistory));
+  const insertChampion = {
+    name: summoner.name,
+    imageUrl: summoner.profileImageUrl,
+    previousTier: `${summoner.previousTiers[0].tier} - ${summoner.previousTiers[0].lp}LP`,
+    isFavorite: false,
+  };
+  if (isExisting >= 0) {
+    summonersHistory.splice(isExisting, 1);
   }
+  summonersHistory.unshift(insertChampion);
+  if (summonersHistory.length > 8) {
+    summonersHistory.splice(8, 1);
+  }
+  localStorage.setItem("summonersHistory", JSON.stringify(summonersHistory));
 };
 
 export const Summoner = (props) => {
