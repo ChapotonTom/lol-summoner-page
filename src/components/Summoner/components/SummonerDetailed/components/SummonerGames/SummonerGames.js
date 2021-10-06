@@ -20,7 +20,6 @@ export const SummonerGames = (props) => {
   useEffect(() => {
     if (summoner.name) {
       getSummonerMatches(summoner.name).then((result) => {
-        console.log(result);
         setGames(result.games);
         setAllGames(result.games);
         setGamesSummary(result.summary);

@@ -4,6 +4,25 @@ import { SummonerProfile } from "./components/SummonerProfile/SummonerProfile";
 import { getSummonerBasicInfo } from "../../services/summoner";
 import SummonerDetails from "./components/SummonerDetailed/SummonerDetails";
 
+const insertSummonerInHistory = (summoner) => {
+  const summonersHistory = JSON.parse(
+    localStorage.getItem("summonersHistory") || "[]"
+  );
+  const isExisting = summonersHistory.findIndex(
+    (summonerHistory) => summonerHistory.name === summoner.name
+  );
+  if (isExisting < 0) {
+    const insertChampion = {
+      name: summoner.name,
+      imageUrl: summoner.profileImageUrl,
+      previousTier: `${summoner.previousTiers[0].tier} - ${summoner.previousTiers[0].lp}LP`,
+      isFavorite: false,
+    };
+    summonersHistory.unshift(insertChampion);
+    localStorage.setItem("summonersHistory", JSON.stringify(summonersHistory));
+  }
+};
+
 export const Summoner = (props) => {
   const { summonerName } = props;
 
@@ -12,6 +31,7 @@ export const Summoner = (props) => {
   useEffect(() => {
     if (summonerName) {
       getSummonerBasicInfo(summonerName).then((result) => {
+        insertSummonerInHistory(result.summoner);
         setSummoner(result.summoner);
       });
     }

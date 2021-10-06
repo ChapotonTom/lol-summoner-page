@@ -14,7 +14,6 @@ const calculateKDA = (kills, assists, deaths) => {
 export const SummonerGamesChampions = (props) => {
   const { gamesChampions } = props;
   const missingChampions = 3 - gamesChampions.length;
-  console.log(missingChampions);
   return (
     <div
       className="column is-one-third"
@@ -28,38 +27,37 @@ export const SummonerGamesChampions = (props) => {
           champion.deaths
         );
         return (
-          <div
-            key={champion.name + index}
-            className="games-summary-champion-container"
-          >
-            <img
-              alt="champion-icon"
-              src={champion.imageUrl}
-              className={"games-summary-champion-icon"}
-            />
-            <div style={{ marginLeft: 10 }}>
-              <div className={"games-summary-champion-name"}>
-                {champion.name}
-              </div>
-              <div className={"games-summary-champion-stats"}>
-                <span
-                  style={{
-                    fontWeight: "bold",
-                    color: winRatio > 60 ? "#c6443e" : "#333333",
-                  }}
-                >
-                  {winRatio}%
-                </span>{" "}
-                ({champion.wins}W {champion.losses}L)
-                <span style={{ color: "#cdd2d2" }}>{" | "}</span>
-                <span
-                  style={{
-                    fontWeight: "bold",
-                    color: getKDAColor(championKDA),
-                  }}
-                >
-                  {championKDA.toFixed(2)} KDA
-                </span>
+          <div key={index}>
+            <div className="games-summary-champion-container">
+              <img
+                alt="champion-icon"
+                src={champion.imageUrl}
+                className={"games-summary-champion-icon"}
+              />
+              <div style={{ marginLeft: 10 }}>
+                <div className={"games-summary-champion-name"}>
+                  {champion.name}
+                </div>
+                <div className={"games-summary-champion-stats"}>
+                  <span
+                    style={{
+                      fontWeight: "bold",
+                      color: winRatio > 60 ? "#c6443e" : "#333333",
+                    }}
+                  >
+                    {winRatio}%
+                  </span>{" "}
+                  ({champion.wins}W {champion.losses}L)
+                  <span style={{ color: "#cdd2d2" }}>{" | "}</span>
+                  <span
+                    style={{
+                      fontWeight: "bold",
+                      color: getKDAColor(championKDA),
+                    }}
+                  >
+                    {championKDA.toFixed(2)} KDA
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -68,10 +66,7 @@ export const SummonerGamesChampions = (props) => {
       {missingChampions > 0 &&
         [...Array(missingChampions)].map((missingChampion, index) => {
           return (
-            <div
-              key={index + missingChampion}
-              className="games-summary-champion-container"
-            >
+            <div key={index} className="games-summary-champion-container">
               <img
                 alt="champion-icon"
                 src={notFoundChampion}

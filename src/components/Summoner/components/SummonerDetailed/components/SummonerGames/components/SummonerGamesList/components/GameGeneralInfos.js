@@ -36,7 +36,7 @@ export const GameGeneralInfos = (props) => {
   return (
     <div
       className="column px-1 py-1 is-one-fifth"
-      style={{ width: "12%", minWidth: 70 }}
+      style={{ flex: "1 0 12%", minWidth: 70 }}
     >
       <div className="game-general-infos-gameType">{gameType}</div>
       <div className="game-general-infos-gameCreation">

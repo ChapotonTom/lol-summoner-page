@@ -83,8 +83,8 @@ export const GameInventory = (props) => {
   }, [items]);
 
   return (
-    <div className="column py-1 ml-5 mr-0 pr-0 is-2">
-      <div className="container mt-2">
+    <div className="column py-1 mx-0 px-0 is-2">
+      <div className="container mt-2" style={{ display: "inline-block" }}>
         <div className="game-inventory-items-container">
           {displayItems(
             formattedItems.slice(0, 4),
