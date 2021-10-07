@@ -12,6 +12,7 @@ import { getSummonerMatchDetail } from "../../../../../../../../services/match";
 
 import { getRandomInt } from "../../../../../../../../utils/getRandomInt";
 import GameTeamPlayers from "./components/GameTeamPlayers";
+import { Loader } from "../../../../../../../../commons/Loader";
 
 const getGameStyle = (isWin, needRenew) => {
   if (needRenew) return "game-rematch";
@@ -37,6 +38,8 @@ export const SummonerGamesList = (props) => {
 
   const [teamsInformations, setTeamsInformations] = useState();
 
+  const [isGameLoading, setIsGameLoading] = useState(false);
+
   const insertPlayerRandomly = (teams) => {
     const randomTeam = getRandomInt(2);
     const randomPlayer = getRandomInt(4);
@@ -47,11 +50,14 @@ export const SummonerGamesList = (props) => {
   };
 
   useEffect(() => {
-    getSummonerMatchDetail(game.gameId).then((result) =>
-      insertPlayerRandomly(result.teams)
-    );
+    setIsGameLoading(true);
+    getSummonerMatchDetail(game.gameId).then((result) => {
+      insertPlayerRandomly(result.teams);
+      setIsGameLoading(false);
+    });
   }, [game.gameId]);
 
+  if (isGameLoading) return <Loader />;
   if (!teamsInformations) return <div />;
   return (
     <div
@@ -81,7 +87,7 @@ export const SummonerGamesList = (props) => {
         isWin={game.isWin}
         needRenew={game.needRenew}
       />
-      <div className={"column summoner-game-team-container p-1 is-3"}>
+      <div className={"column summoner-game-team-container px-1 py-0 is-3"}>
         <GameTeamPlayers
           team={teamsInformations[0]}
           summonerName={summonerName}

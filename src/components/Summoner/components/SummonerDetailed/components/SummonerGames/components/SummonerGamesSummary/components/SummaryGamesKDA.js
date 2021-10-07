@@ -52,7 +52,9 @@ export class SummonerGamesKDA extends React.PureComponent {
                   data={generateData(winRatio, lossRatio)}
                   options={options}
                 />
-                <div className="game-summary-kda-graph-text">{winRatio}%</div>
+                <div className="game-summary-kda-graph-text">
+                  {winRatio.toFixed(0)}%
+                </div>
               </div>
             </div>
           </div>

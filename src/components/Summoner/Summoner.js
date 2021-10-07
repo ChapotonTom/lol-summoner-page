@@ -3,6 +3,7 @@ import { SummonerProfile } from "./components/SummonerProfile/SummonerProfile";
 
 import { getSummonerBasicInfo } from "../../services/summoner";
 import SummonerDetails from "./components/SummonerDetailed/SummonerDetails";
+import { Loader } from "../../commons/loader";
 
 const insertSummonerInHistory = (summoner) => {
   const summonersHistory = JSON.parse(
@@ -31,19 +32,25 @@ export const Summoner = (props) => {
   const { summonerName } = props;
 
   const [summoner, setSummoner] = useState();
+  const [summonerIsLoading, setSummonerIsLoading] = useState(false);
 
   useEffect(() => {
     if (summonerName) {
+      setSummonerIsLoading(true);
       getSummonerBasicInfo(summonerName).then((result) => {
         insertSummonerInHistory(result.summoner);
         setSummoner(result.summoner);
+        setSummonerIsLoading(false);
       });
     }
   }, [summonerName]);
   return (
     <div>
       <SummonerProfile summoner={summoner} />
-      <SummonerDetails summoner={summoner} />
+      <SummonerDetails
+        summoner={summoner}
+        summonerIsLoading={summonerIsLoading}
+      />
     </div>
   );
 };

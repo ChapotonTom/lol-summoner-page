@@ -2,7 +2,7 @@ import React from "react";
 import SummonerLeagueContainer from "./SummonerLeagueContainer";
 
 export const SummonerLeagues = (props) => {
-  const { summoner } = props;
+  const { summoner, summonerIsLoading } = props;
 
   if (summoner) {
     return (
@@ -12,6 +12,7 @@ export const SummonerLeagues = (props) => {
             <SummonerLeagueContainer
               key={league.tierRank.name}
               league={league}
+              summonerIsLoading={summonerIsLoading}
             />
           );
         })}

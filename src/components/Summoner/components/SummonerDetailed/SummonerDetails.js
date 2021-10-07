@@ -4,7 +4,7 @@ import SummonerLeagues from "./components/SummonerLeagues/SummonerLeagues";
 import SummonerGames from "./components/SummonerGames/SummonerGames";
 
 export const SummonerDetails = (props) => {
-  const { summoner } = props;
+  const { summoner, summonerIsLoading } = props;
 
   if (summoner) {
     return (
@@ -15,7 +15,10 @@ export const SummonerDetails = (props) => {
               className="column mr-3 mb-3 is-one-quarter"
               style={{ width: 300 }}
             >
-              <SummonerLeagues summoner={summoner} />
+              <SummonerLeagues
+                summoner={summoner}
+                summonerIsLoading={summonerIsLoading}
+              />
               <SummonerChampions summoner={summoner} />
             </div>
             <div className="column pl-0">

@@ -6,12 +6,14 @@ import { getSummonerMostInfo } from "../../../../../../services/summoner";
 import { calculateRatio } from "../../../../../../utils/calculateRatio";
 import SummonerChampionsByWinRate from "./components/SummonerChampionsByWinRate";
 import SummonerChampionsByWeekRate from "./components/SummonerChampionsByWeekRate";
+import { Loader } from "../../../../../../commons/Loader";
 
 export const SummonerChampions = (props) => {
   const { summoner } = props;
 
   const [sortByWinRate, setSortByWinRate] = useState(true);
   const [champions, setChampions] = useState([]);
+  const [isChampionsLoading, setIChampionsLoading] = useState(false);
 
   const processChampions = (champions, setter) => {
     let formattedChampions = champions.map((champion) => {
@@ -26,12 +28,17 @@ export const SummonerChampions = (props) => {
 
   useEffect(() => {
     if (summoner.name) {
+      setIChampionsLoading(true);
       setSortByWinRate(true);
       getSummonerMostInfo(summoner.name).then((result) => {
         processChampions(result.champions, setChampions);
+        setIChampionsLoading(false);
       });
     }
   }, [summoner.name]);
+
+  if (isChampionsLoading)
+    return <Loader className="summoner-champions-container" />;
 
   if (summoner) {
     return (

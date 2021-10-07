@@ -5,6 +5,8 @@ import SummonerGamesPositions from "./components/SummaryGamesPositions";
 import SummonerGamesSummaryTabs from "./components/SummonerGamesSummaryTabs";
 import "./summonerGamesSummary.css";
 
+import { Loader } from "../../../../../../../../commons/Loader";
+
 export const SummonerGamesSummary = (props) => {
   const {
     gameTypeSelected,
@@ -12,7 +14,9 @@ export const SummonerGamesSummary = (props) => {
     gamesSummary,
     gamesChampions,
     gamesPositions,
+    isGamesLoading,
   } = props;
+  if (isGamesLoading) return <Loader />;
   return (
     <div className="container pt-0" style={{ minWidth: 300 }}>
       <SummonerGamesSummaryTabs

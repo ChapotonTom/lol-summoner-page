@@ -13,7 +13,7 @@ export const GameChampionAndStuff = (props) => {
       className="column p-0 is-1 game-champion-stuff-container"
       style={{ minWidth: 100 }}
     >
-      <div className="container columns pt-2 mb-0" style={{ minHeight: 75 }}>
+      <div className="container columns pt-4 mb-0" style={{ minHeight: 75 }}>
         <div className="column px-0 pb-0 is-half" style={{ minWidth: 60 }}>
           <img
             className="game-champion-picture"

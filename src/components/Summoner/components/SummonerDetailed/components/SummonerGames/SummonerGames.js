@@ -17,14 +17,18 @@ export const SummonerGames = (props) => {
   const [gamesChampions, setGamesChampions] = useState([]);
   const [gamesPositions, setGamesPositions] = useState([]);
 
+  const [isGamesLoading, setIsGamesLoading] = useState(false);
+
   useEffect(() => {
     if (summoner.name) {
+      setIsGamesLoading(true);
       getSummonerMatches(summoner.name).then((result) => {
         setGames(result.games);
         setAllGames(result.games);
         setGamesSummary(result.summary);
         setGamesChampions(result.champions);
         setGamesPositions(result.positions);
+        setIsGamesLoading(false);
       });
     }
   }, [summoner.name]);
@@ -55,19 +59,22 @@ export const SummonerGames = (props) => {
         gamesSummary={gamesSummary}
         gamesChampions={gamesChampions}
         gamesPositions={gamesPositions}
+        isGamesLoading={isGamesLoading}
       />
-      <div className="container mt-3" style={{ minWidth: 300 }}>
-        {games.map((game) => {
-          return (
-            <SummonerGamesList
-              key={game.gameId}
-              game={game}
-              itemsDetails={itemsDetails}
-              summonerName={summoner.name}
-            />
-          );
-        })}
-      </div>
+      {!isGamesLoading && (
+        <div className="container mt-3" style={{ minWidth: 300 }}>
+          {games.map((game) => {
+            return (
+              <SummonerGamesList
+                key={game.gameId}
+                game={game}
+                itemsDetails={itemsDetails}
+                summonerName={summoner.name}
+              />
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };

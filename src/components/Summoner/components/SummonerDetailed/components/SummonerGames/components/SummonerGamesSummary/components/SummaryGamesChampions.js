@@ -66,15 +66,20 @@ export const SummonerGamesChampions = (props) => {
       {missingChampions > 0 &&
         [...Array(missingChampions)].map((missingChampion, index) => {
           return (
-            <div key={index} className="games-summary-champion-container">
-              <img
-                alt="champion-icon"
-                src={notFoundChampion}
-                className={"games-summary-champion-icon"}
-              />
-              <div style={{ marginLeft: 10 }}>
-                <div className={"games-summary-champion-name-not-found"}>
-                  Not found champion
+            <div key={index} style={{ display: "inline-block" }}>
+              <div
+                className="games-summary-champion-container"
+                style={{ marginLeft: 5 }}
+              >
+                <img
+                  alt="champion-icon"
+                  src={notFoundChampion}
+                  className={"games-summary-champion-icon"}
+                />
+                <div style={{ marginLeft: 10 }}>
+                  <div className={"games-summary-champion-name-not-found"}>
+                    Not found champion
+                  </div>
                 </div>
               </div>
             </div>

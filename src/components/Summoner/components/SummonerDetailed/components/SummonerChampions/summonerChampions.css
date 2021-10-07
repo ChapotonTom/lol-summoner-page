@@ -120,3 +120,13 @@
   border-radius: 0px 4px 4px 0px;
   padding-top: 3px;
 }
+
+.summoner-champions-container-empty {
+  border: solid gray;
+  width: 300px;
+  border-width: thin;
+
+  background-color: #f2f2f2;
+  border-radius: 2px;
+  border: solid 1px #cdd2d2;
+}

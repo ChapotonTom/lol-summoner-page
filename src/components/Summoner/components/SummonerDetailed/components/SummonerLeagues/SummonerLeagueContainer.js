@@ -4,8 +4,9 @@ import "./summonerLeagues.css";
 import { calculateRatio } from "../../../../../../utils/calculateRatio";
 
 import unrankedPicture from "../../../../../../assets/images/unranked.png";
+import { Loader } from "../../../../../../commons/Loader";
 
-export const SummonerLeagueUnrankedContainer = (league) => {
+const SummonerLeagueUnrankedContainer = (league) => {
   return (
     <div className="container columns pt-2 mb-5 summoner-league-container">
       <div className="column p-0 is-one-third">
@@ -27,13 +28,15 @@ export const SummonerLeagueUnrankedContainer = (league) => {
 };
 
 export const SummonerLeagueContainer = (props) => {
-  const { league } = props;
+  const { league, summonerIsLoading } = props;
 
   const totalGames = league.wins + league.losses;
 
   if (!league.hasResults) {
     return SummonerLeagueUnrankedContainer(league);
   }
+  if (summonerIsLoading)
+    return <Loader className="container" style={{ marginBottom: 30 }} />;
 
   return (
     <div className="container columns pt-2 mb-5 summoner-league-container">
