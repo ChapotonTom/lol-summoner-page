@@ -15,7 +15,7 @@
 }
 
 .game-rematch {
-  border: solid #a1b8cd;
+  border: solid #999999;
   background-color: #a7a7a7;
 }
 
@@ -237,4 +237,38 @@
   .summoner-game-last-column {
     width: 100%;
   }
+}
+
+.summoner-game-more-info {
+  flex-grow: 1;
+  height: auto;
+  min-height: 40px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.summoner-game-arrow-defeat-game-defeat,
+.summoner-game-arrow-defeat-game-victory,
+.summoner-game-arrow-defeat-game-rematch {
+  width: 20px;
+  height: 20px;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.summoner-game-arrow-defeat-game-defeat {
+  filter: invert(80%) sepia(97%) saturate(1091%) hue-rotate(333deg)
+    brightness(82%) contrast(82%);
+}
+
+.summoner-game-arrow-defeat-game-victory {
+  filter: invert(80%) sepia(86%) saturate(833%) hue-rotate(172deg)
+    brightness(91%) contrast(106%);
+}
+
+.summoner-game-arrow-defeat-game-rematch {
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(297deg)
+    brightness(96%) contrast(104%);
 }

@@ -14,6 +14,8 @@ import { getRandomInt } from "../../../../../../../../utils/getRandomInt";
 import GameTeamPlayers from "./components/GameTeamPlayers";
 import { Loader } from "../../../../../../../../commons/Loader";
 
+import ArrowDown from "../../../../../../../../assets/images/arrow-down.png";
+
 const getGameStyle = (isWin, needRenew) => {
   if (needRenew) return "game-rematch";
   else if (isWin) return "game-victory";
@@ -98,13 +100,21 @@ export const SummonerGamesList = (props) => {
         />
       </div>
       <div
+        className="summoner-game-more-info"
         style={{
-          width: "40px",
-          height: "auto",
-          minHeight: "40px",
           ...getLastColumnStyle(game.isWin, game.needRenew),
         }}
-      ></div>
+        data-tip="(Feature not available)"
+      >
+        <img
+          alt="arrow-down"
+          src={ArrowDown}
+          className={`summoner-game-arrow-defeat-${getGameStyle(
+            game.isWin,
+            game.needRenew
+          )}`}
+        />
+      </div>
     </div>
   );
 };
