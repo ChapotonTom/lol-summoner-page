@@ -41,7 +41,7 @@ export const SummonerNameInputBox = (props) => {
               className="container columns mx-0 summoner-search-input-element-container"
               onClick={() => confirmSummonerSearch(summoner.name)}
             >
-              <div className="column pl-5 py-2 is-one-third">
+              <div className="column pl-5 py-2 is-one-third summoner-search-icon">
                 <img
                   alt="summoner-icon"
                   className="summoner-search-input-element-icon"

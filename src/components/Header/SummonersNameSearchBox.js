@@ -123,13 +123,11 @@ export const SummonersNameSearchBox = (props) => {
               key={summoner.name + index}
               className="container columns mx-0 summoner-search-element-container"
             >
-              <div
-                className="column pl-5 py-2 is-two-thirds"
-                style={{ textAlign: "left" }}
-              >
+              <div className="column pl-5 py-2 is-two-thirds summoner-search-name-container">
                 <span
                   style={{ cursor: "pointer" }}
                   onClick={() => confirmSummonerSearch(summoner.name)}
+                  className="summoner-search-name-text"
                 >
                   {summoner.name}
                 </span>
