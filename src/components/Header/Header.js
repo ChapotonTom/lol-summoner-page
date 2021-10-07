@@ -33,6 +33,7 @@ export const Header = (props) => {
     if (e.key === "Enter") {
       setSummonerName("");
       confirmSummonerSearch(summonerName);
+      e.target.blur();
     }
   };
 

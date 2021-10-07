@@ -27,14 +27,16 @@ export const SummonerGamesChampions = (props) => {
           champion.deaths
         );
         return (
-          <div key={index} style={{ display: "inline-block" }}>
+          <div key={index} style={{ display: "inline-block", width: "90%" }}>
             <div className="games-summary-champion-container">
-              <img
-                alt="champion-icon"
-                src={champion.imageUrl}
-                className={"games-summary-champion-icon"}
-              />
-              <div style={{ marginLeft: 10 }}>
+              <div style={{ flex: "1 0 20%" }}>
+                <img
+                  alt="champion-icon"
+                  src={champion.imageUrl}
+                  className={"games-summary-champion-icon"}
+                />
+              </div>
+              <div style={{ marginLeft: 10, flex: "1 0 75%" }}>
                 <div className={"games-summary-champion-name"}>
                   {champion.name}
                 </div>

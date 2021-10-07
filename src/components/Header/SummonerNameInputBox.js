@@ -38,7 +38,7 @@ export const SummonerNameInputBox = (props) => {
           return (
             <div
               key={summoner.name + index}
-              className="container columns mx-0 summoner-search-input-element-container"
+              className="container columns is-mobile mx-0 summoner-search-input-element-container"
               onClick={() => confirmSummonerSearch(summoner.name)}
             >
               <div className="column pl-5 py-2 is-one-third summoner-search-icon">

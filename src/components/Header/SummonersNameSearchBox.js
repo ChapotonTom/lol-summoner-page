@@ -96,7 +96,10 @@ export const SummonersNameSearchBox = (props) => {
 
   return (
     <div className="summoner-searchbox-container pb-5">
-      <div className="container columns m-0" style={{ minHeight: 40 }}>
+      <div
+        className="container columns is-mobile m-0"
+        style={{ minHeight: 40 }}
+      >
         <div
           className={`column pt-2 summoner-searchbox-tab${
             isRecentSearchSelected ? "-selected" : ""
@@ -121,7 +124,7 @@ export const SummonersNameSearchBox = (props) => {
           return (
             <div
               key={summoner.name + index}
-              className="container columns mx-0 summoner-search-element-container"
+              className="container columns is-mobile mx-0 summoner-search-element-container"
             >
               <div className="column pl-5 py-2 is-two-thirds summoner-search-name-container">
                 <span

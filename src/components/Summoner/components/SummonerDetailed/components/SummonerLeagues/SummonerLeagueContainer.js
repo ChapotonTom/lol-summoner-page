@@ -39,7 +39,7 @@ export const SummonerLeagueContainer = (props) => {
     return <Loader className="container" style={{ marginBottom: 30 }} />;
 
   return (
-    <div className="container columns pt-2 mb-5 summoner-league-container">
+    <div className="container columns pt-2 mx-0 mb-5 summoner-league-container is-mobile">
       <div className="column p-0 is-one-third">
         <img
           alt="summoner-league-pic"

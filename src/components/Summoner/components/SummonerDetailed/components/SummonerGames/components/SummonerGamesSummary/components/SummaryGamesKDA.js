@@ -31,8 +31,8 @@ export class SummonerGamesKDA extends React.PureComponent {
     const { assists, deaths, kills, losses, wins } = gamesSummary;
     const totalGames = wins + losses;
 
-    const winRatio = (100 * wins) / totalGames;
-    const lossRatio = (100 * losses) / totalGames;
+    const winRatio = Math.round((100 * wins) / totalGames);
+    const lossRatio = Math.round((100 * losses) / totalGames);
 
     const kda = (kills + assists) / deaths;
 
@@ -47,7 +47,7 @@ export class SummonerGamesKDA extends React.PureComponent {
               <div className="game-summary-kda-games">
                 {totalGames}G {wins}W {losses}L
               </div>
-              <div style={{ width: 90, height: 90 }}>
+              <div className="game-summary-winrate-graph-container">
                 <Doughnut
                   data={generateData(winRatio, lossRatio)}
                   options={options}

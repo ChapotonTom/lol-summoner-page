@@ -51,8 +51,7 @@
 
 .game-summary-kda-graph-text {
   position: absolute;
-  top: 50%;
-  left: 20%;
+  top: 45%;
   font-family: Helvetica;
   font-size: 14px;
   font-weight: bold;
@@ -82,9 +81,10 @@
 .games-summary-champion-container,
 .games-summary-position-container {
   display: flex;
+  justify-content: space-between;
   text-align: left;
   margin-top: 5px;
-  margin-left: 10px;
+  /* margin-left: 10px; */
 }
 
 .games-summary-position-container {
@@ -122,4 +122,13 @@
   width: 28px;
   height: 28px;
   margin-top: 3px;
+}
+
+.game-summary-winrate-graph-container {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }

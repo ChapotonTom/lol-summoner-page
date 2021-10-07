@@ -8,8 +8,8 @@ export const SummonerProfile = (props) => {
 
   if (summoner) {
     return (
-      <div className="section py-4 px-5 summoner-profile-containers">
-        <div className="container" style={{ width: "75%" }}>
+      <div className="section py-4 summoner-profile-containers">
+        <div className="container is-max-widescreen">
           <div className="container summoner-previous-tiers-containers">
             {summoner.previousTiers.map((tier) => {
               return (
@@ -23,7 +23,7 @@ export const SummonerProfile = (props) => {
               );
             })}
           </div>
-          <div className="container columns pt-5">
+          <div className="container columns is-mobile pt-5">
             <div className="column is-2" style={{ width: 145, marginLeft: 30 }}>
               <div className="summoner-profile-picture-container">
                 <img

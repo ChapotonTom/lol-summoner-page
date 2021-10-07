@@ -28,17 +28,19 @@ export const SummonerGamesPositions = (props) => {
       </div>
       {gamesPositions.map((position, index) => {
         return (
-          <div key={index} style={{ display: "inline-block" }}>
+          <div key={index} style={{ display: "inline-block", width: "90%" }}>
             <div
               key={position.position + index}
               className="games-summary-position-container"
             >
-              <img
-                alt="position-icon"
-                src={positionIconKeywords[position.position]}
-                className={"games-summary-position-icon"}
-              />
-              <div style={{ marginLeft: 10 }}>
+              <div style={{ flex: "1 0 20%" }}>
+                <img
+                  alt="position-icon"
+                  src={positionIconKeywords[position.position]}
+                  className={"games-summary-position-icon"}
+                />
+              </div>
+              <div style={{ marginLeft: 10, flex: "1 0 75%" }}>
                 <div className={"games-summary-position-name"}>
                   {position.positionName}
                 </div>

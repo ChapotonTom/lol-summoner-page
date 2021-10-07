@@ -43,7 +43,7 @@ export const SummonerChampions = (props) => {
   if (summoner) {
     return (
       <div className="summoner-champions-container">
-        <div className="container columns">
+        <div className="container mx-0 columns is-mobile">
           <div
             className={`column champion-tab-right summoner-champions-${
               sortByWinRate ? "tab-selected" : "tab"

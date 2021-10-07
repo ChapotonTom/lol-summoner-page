@@ -256,6 +256,7 @@
   margin-top: auto;
   margin-left: auto;
   margin-right: auto;
+  user-select: none;
 }
 
 .summoner-game-arrow-defeat-game-defeat {

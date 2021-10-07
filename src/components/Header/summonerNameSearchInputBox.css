@@ -66,15 +66,3 @@
 .summoner-search-input-summoner {
   text-align: left;
 }
-
-@media screen and (max-width: 768px) {
-  .summoner-search-name-container,
-  .summoner-search-input-summoner {
-    text-align: center;
-  }
-
-  .summoner-search-name-text,
-  .summoner-search-icon {
-    margin-right: 20px;
-  }
-}

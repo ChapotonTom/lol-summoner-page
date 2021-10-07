@@ -9,19 +9,16 @@ export const SummonerDetails = (props) => {
   if (summoner) {
     return (
       <div className="section pt-3">
-        <div className="container p-3" style={{ width: "75%" }}>
+        <div className="container is-max-widescreen p-3">
           <div className="columns">
-            <div
-              className="column mr-3 mb-3 is-one-quarter"
-              style={{ width: 300 }}
-            >
+            <div className="column mb-3 is-one-third">
               <SummonerLeagues
                 summoner={summoner}
                 summonerIsLoading={summonerIsLoading}
               />
               <SummonerChampions summoner={summoner} />
             </div>
-            <div className="column pl-0">
+            <div className="column">
               <SummonerGames summoner={summoner} />
             </div>
           </div>

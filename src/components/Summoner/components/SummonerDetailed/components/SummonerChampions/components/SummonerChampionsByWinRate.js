@@ -25,7 +25,7 @@ export const SummonerChampionsByWinRate = (props) => {
 
   return (
     <div
-      className={`container columns py-1 summoner-champions-row ${
+      className={`container columns mx-0 is-mobile py-1 summoner-champions-row ${
         isLastElement ? "last-champion-row" : ""
       }`}
     >
