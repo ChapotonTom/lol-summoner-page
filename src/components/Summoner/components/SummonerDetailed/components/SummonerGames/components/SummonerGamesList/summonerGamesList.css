@@ -21,6 +21,12 @@
 
 /* GENERAL INFORMATIONS */
 
+@media screen and (max-width: 768px) {
+  .game-general-infos-container {
+    padding-top: 20px;
+  }
+}
+
 .game-general-infos-gameType {
   font-family: AppleSDGothicNeo;
   font-size: 11px;

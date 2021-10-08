@@ -8,11 +8,11 @@ export const GameTeamPlayers = (props) => {
   const { team, summonerName } = props;
   return (
     <div
-      className="game-team-container pt-1 is-flex-grow-1"
+      className="game-team-container pt-2 is-flex-grow-1"
       style={{ width: "50%" }}
     >
       <ReactTooltip />
-      <div style={{ display: "inline-block", maxWidth: "65px" }}>
+      <div style={{ display: "inline-block", width: "90px" }}>
         {team.players.map((player, index) => {
           const championName = getFileName(player.champion.imageUrl);
           return (

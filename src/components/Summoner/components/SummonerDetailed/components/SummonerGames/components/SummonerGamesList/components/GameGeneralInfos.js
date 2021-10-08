@@ -38,7 +38,7 @@ export const GameGeneralInfos = (props) => {
 
   return (
     <div className="column p-0 pt-1 is-flex-grow-1">
-      <div style={{ marginTop: "auto" }}>
+      <div className="game-general-infos-container">
         <div className="game-general-infos-gameType">{gameType}</div>
         <div className="game-general-infos-gameCreation">
           {getGameDateStr(howManyDaysAgo, gameDate)}

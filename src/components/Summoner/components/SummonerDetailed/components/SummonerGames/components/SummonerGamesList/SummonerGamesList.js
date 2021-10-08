@@ -97,7 +97,7 @@ export const SummonerGamesList = (props) => {
           needRenew={game.needRenew}
         />
       </div>
-      <div className={"column py-1 is-flex px-0 is-3"}>
+      <div className={"column py-0 is-flex px-0"}>
         <GameTeamPlayers
           team={teamsInformations[0]}
           summonerName={summonerName}
@@ -106,23 +106,23 @@ export const SummonerGamesList = (props) => {
           team={teamsInformations[1]}
           summonerName={summonerName}
         />
-      </div>
-      <div className={"column m-0 p-0 is-1"}>
-        <div
-          className="summoner-game-more-info"
-          style={{
-            ...getLastColumnStyle(game.isWin, game.needRenew),
-          }}
-          data-tip="(Feature not available)"
-        >
-          <img
-            alt="arrow-down"
-            src={ArrowDown}
-            className={`summoner-game-arrow-defeat-${getGameStyle(
-              game.isWin,
-              game.needRenew
-            )}`}
-          />
+        <div className={"column m-0 p-0 is-2 is-2-mobile"}>
+          <div
+            className="summoner-game-more-info"
+            style={{
+              ...getLastColumnStyle(game.isWin, game.needRenew),
+            }}
+            data-tip="(Feature not available)"
+          >
+            <img
+              alt="arrow-down"
+              src={ArrowDown}
+              className={`summoner-game-arrow-defeat-${getGameStyle(
+                game.isWin,
+                game.needRenew
+              )}`}
+            />
+          </div>
         </div>
       </div>
     </div>
