@@ -48,12 +48,6 @@
   text-align: left;
 }
 
-@media screen and (max-width: 768px) {
-  .summoner-champions-rate-container {
-    text-align: center;
-  }
-}
-
 .summoner-champions-top-detail {
   font-family: Helvetica;
   font-size: 13px;

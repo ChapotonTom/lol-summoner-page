@@ -9,11 +9,8 @@ export const GameChampionAndStuff = (props) => {
   const championName = getFileName(game.champion.imageUrl);
 
   return (
-    <div
-      className="column p-0 is-1 game-champion-stuff-container"
-      style={{ minWidth: 100 }}
-    >
-      <div className="container columns pt-4 mb-0" style={{ minHeight: 75 }}>
+    <div className="column px-0 pt-1 is-flex-grow-1">
+      <div className="columns pt-2 ml-1 mb-0">
         <div className="column px-0 pb-0 is-half" style={{ minWidth: 60 }}>
           <img
             className="game-champion-picture"
@@ -47,7 +44,7 @@ export const GameChampionAndStuff = (props) => {
           />
         </div>
       </div>
-      <div className="container game-champion-name">{championName}</div>
+      <div className="game-champion-name">{championName}</div>
     </div>
   );
 };

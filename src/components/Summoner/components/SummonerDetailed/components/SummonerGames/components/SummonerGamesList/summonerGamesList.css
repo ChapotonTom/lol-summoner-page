@@ -233,15 +233,10 @@
 .summoner-game-last-column {
   width: 30px;
 }
-@media screen and (max-width: 768px) {
-  .summoner-game-last-column {
-    width: 100%;
-  }
-}
 
 .summoner-game-more-info {
   flex-grow: 1;
-  height: auto;
+  height: 100%;
   min-height: 40px;
   cursor: pointer;
   display: flex;

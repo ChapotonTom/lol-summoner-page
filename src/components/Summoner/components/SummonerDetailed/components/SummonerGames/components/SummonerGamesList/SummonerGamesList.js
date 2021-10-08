@@ -69,27 +69,35 @@ export const SummonerGamesList = (props) => {
         game.needRenew
       )}`}
     >
-      <GameGeneralInfos
-        gameType={game.gameType}
-        createDate={game.createDate}
-        isWin={game.isWin}
-        needRenew={game.needRenew}
-        gameLength={game.gameLength}
-      />
-      <GameChampionAndStuff game={game} />
-      <GameKDA stats={game.stats.general} />
-      <GameMoreStats
-        stats={game.stats.general}
-        championLevel={game.champion.level}
-      />
-      <GameInventory
-        items={game.items}
-        itemsDetails={itemsDetails}
-        wards={game.stats.ward}
-        isWin={game.isWin}
-        needRenew={game.needRenew}
-      />
-      <div className={"column summoner-game-team-container px-1 py-0 is-3"}>
+      <div className={"column px-1 py-1 is-3"}>
+        <div className={"columns mx-0 mt-0 is-mobile"}>
+          <GameGeneralInfos
+            gameType={game.gameType}
+            createDate={game.createDate}
+            isWin={game.isWin}
+            needRenew={game.needRenew}
+            gameLength={game.gameLength}
+          />
+          <GameChampionAndStuff game={game} />
+        </div>
+      </div>
+      <div className={"column is-flex py-1 px-1 is-3"}>
+        <GameKDA stats={game.stats.general} />
+        <GameMoreStats
+          stats={game.stats.general}
+          championLevel={game.champion.level}
+        />
+      </div>
+      <div className={"column py-1 is-2"}>
+        <GameInventory
+          items={game.items}
+          itemsDetails={itemsDetails}
+          wards={game.stats.ward}
+          isWin={game.isWin}
+          needRenew={game.needRenew}
+        />
+      </div>
+      <div className={"column py-1 is-flex px-0 is-3"}>
         <GameTeamPlayers
           team={teamsInformations[0]}
           summonerName={summonerName}
@@ -99,21 +107,23 @@ export const SummonerGamesList = (props) => {
           summonerName={summonerName}
         />
       </div>
-      <div
-        className="summoner-game-more-info"
-        style={{
-          ...getLastColumnStyle(game.isWin, game.needRenew),
-        }}
-        data-tip="(Feature not available)"
-      >
-        <img
-          alt="arrow-down"
-          src={ArrowDown}
-          className={`summoner-game-arrow-defeat-${getGameStyle(
-            game.isWin,
-            game.needRenew
-          )}`}
-        />
+      <div className={"column m-0 p-0 is-1"}>
+        <div
+          className="summoner-game-more-info"
+          style={{
+            ...getLastColumnStyle(game.isWin, game.needRenew),
+          }}
+          data-tip="(Feature not available)"
+        >
+          <img
+            alt="arrow-down"
+            src={ArrowDown}
+            className={`summoner-game-arrow-defeat-${getGameStyle(
+              game.isWin,
+              game.needRenew
+            )}`}
+          />
+        </div>
       </div>
     </div>
   );

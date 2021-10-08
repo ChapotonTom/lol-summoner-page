@@ -3,9 +3,12 @@ import "../summonerGamesList.css";
 
 export const GameKDA = (props) => {
   const { stats } = props;
+  const addPaddingTop = !stats.largestMultiKillString && !stats.opScoreBadge;
   return (
-    <div className="column px-1 py-1 is-2">
-      <div className="mt-2 game-kills-assists-deaths">
+    <div className="is-flex-grow-1">
+      <div
+        className={`mt-${addPaddingTop ? "4" : "2"} game-kills-assists-deaths`}
+      >
         {stats.kill}
         <span style={{ color: "#948e8d" }}> / </span>
         <span style={{ color: "#d0021b" }}>{stats.assist}</span>

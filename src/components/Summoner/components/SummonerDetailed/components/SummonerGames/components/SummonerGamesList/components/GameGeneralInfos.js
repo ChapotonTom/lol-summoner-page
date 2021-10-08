@@ -37,31 +37,30 @@ export const GameGeneralInfos = (props) => {
   const howManyDaysAgo = nowDate.diff(gameDate, "days");
 
   return (
-    <div
-      className="column px-1 py-1 is-one-fifth"
-      style={{ flex: "1 0 12%", minWidth: 70 }}
-    >
-      <div className="game-general-infos-gameType">{gameType}</div>
-      <div className="game-general-infos-gameCreation">
-        {getGameDateStr(howManyDaysAgo, gameDate)}
-      </div>
-      <div>
+    <div className="column p-0 pt-1 is-flex-grow-1">
+      <div style={{ marginTop: "auto" }}>
+        <div className="game-general-infos-gameType">{gameType}</div>
+        <div className="game-general-infos-gameCreation">
+          {getGameDateStr(howManyDaysAgo, gameDate)}
+        </div>
+        <div>
+          <div
+            className="game-general-infos-separator"
+            style={{
+              borderBottom: `solid ${getSeparatorColor(isWin, needRenew)}`,
+              borderBottomWidth: "thin",
+            }}
+          />
+        </div>
         <div
-          className="game-general-infos-separator"
-          style={{
-            borderBottom: `solid ${getSeparatorColor(isWin, needRenew)}`,
-            borderBottomWidth: "thin",
-          }}
-        />
-      </div>
-      <div
-        className="game-general-infos-gameResult"
-        style={{ color: getGameResultColor(isWin, needRenew) }}
-      >
-        {getGameResultStr(isWin, needRenew)}
-      </div>
-      <div className="game-general-infos-gameLength">
-        {Math.round(gameLength / 60)}m {gameLength % 60}s
+          className="game-general-infos-gameResult"
+          style={{ color: getGameResultColor(isWin, needRenew) }}
+        >
+          {getGameResultStr(isWin, needRenew)}
+        </div>
+        <div className="game-general-infos-gameLength">
+          {Math.round(gameLength / 60)}m {gameLength % 60}s
+        </div>
       </div>
     </div>
   );

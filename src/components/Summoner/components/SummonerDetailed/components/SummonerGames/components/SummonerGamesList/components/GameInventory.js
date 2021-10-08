@@ -83,7 +83,7 @@ export const GameInventory = (props) => {
   }, [items]);
 
   return (
-    <div className="column py-1 mx-0 px-0 is-2">
+    <div className="py-1 mx-0 px-0">
       <div className="container mt-2" style={{ display: "inline-block" }}>
         <div className="game-inventory-items-container">
           {displayItems(
