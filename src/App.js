@@ -6,7 +6,7 @@ import { Header } from "./components/Header/Header";
 import Summoner from "./components/Summoner/Summoner";
 
 const App = () => {
-  const [summonerName, setSummonerName] = useState("");
+  const [summonerName, setSummonerName] = useState("Roger");
 
   return (
     <div className="App">
